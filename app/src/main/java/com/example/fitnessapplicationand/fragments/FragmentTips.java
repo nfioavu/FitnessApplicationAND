@@ -34,46 +34,39 @@ public class FragmentTips extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view =  inflater.inflate(R.layout.fragment_fragment_tips, container, false);
+        View view = inflater.inflate(R.layout.fragment_fragment_tips, container, false);
         TextView text = view.findViewById(R.id.quoteText);
         TextView author = view.findViewById(R.id.quoteAuthor);
-//        TextView senderName = view.findViewById(R.id.senderName);
-//        TextView senderLink = view.findViewById(R.id.senderLink);
-//        TextView quoteLink = view.findViewById(R.id.quoteLink);
 
-//        getQuote();
-//
-//        public void getQuote()
-//        {
-            Retrofit retrofit = new Retrofit.Builder()
-                    .baseUrl("http://api.forismatic.com/api/1.0/")
-                    .addConverterFactory(GsonConverterFactory.create())
-                    .build();
-            QuoteAPI quoteAPI = retrofit.create(QuoteAPI.class);
-            Call<Quote> call = quoteAPI.getQuote();
+        //take random quotes from the api
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl("http://api.forismatic.com/api/1.0/")
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+        QuoteAPI quoteAPI = retrofit.create(QuoteAPI.class);
+        Call<Quote> call = quoteAPI.getQuote();
 
-            call.enqueue(new Callback<Quote>() {
-                @Override
-                public void onResponse(Call<Quote> call, Response<Quote> response) {
-                    if (!response.isSuccessful()) {
-                        text.setText("Code: " + response.code());
-                        return;
-                    }
-                    Toast.makeText(getActivity(), response.body().getQuoteText(), Toast.LENGTH_SHORT).show();
-                    text.setText(response.body().getQuoteText());
-
-                    if (response.body().getQuoteAuthor().equals(""))
-                        author.setText("Unknown author");
-                    else
-                        author.setText("\"" + response.body().getQuoteAuthor() + "\"");
+        call.enqueue(new Callback<Quote>() {
+            @Override
+            public void onResponse(Call<Quote> call, Response<Quote> response) {
+                if (!response.isSuccessful()) {
+                    text.setText("Code: " + response.code());
+                    return;
                 }
-                @Override
-                public void onFailure(Call<Quote> call, Throwable t) {
-                    text.setText(t.getMessage());
-                }
-            });
+                Toast.makeText(getActivity(), response.body().getQuoteText(), Toast.LENGTH_SHORT).show();
+                text.setText(response.body().getQuoteText());
 
-//        }
+                if (response.body().getQuoteAuthor().equals(""))
+                    author.setText("Unknown author");
+                else
+                    author.setText("\"" + response.body().getQuoteAuthor() + "\"");
+            }
+
+            @Override
+            public void onFailure(Call<Quote> call, Throwable t) {
+                text.setText(t.getMessage());
+            }
+        });
 
 
         return view;

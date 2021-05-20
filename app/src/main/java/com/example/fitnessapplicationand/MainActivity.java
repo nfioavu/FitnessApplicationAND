@@ -19,9 +19,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //allows for this activity to only open for the very first time when using the app
         if (AppConfig.activity == false) {
             Intent intent = new Intent();
-            intent.setClass(this,Activity3.class);
+            intent.setClass(this, Activity3.class);
             startActivity(intent);
             this.finish();
         }
@@ -42,11 +43,9 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-
     }
 
-    public void openActivity2()
-    {
+    public void openActivity2() {
         Intent intent = new Intent(this, Activity2.class);
         startActivity(intent);
     }

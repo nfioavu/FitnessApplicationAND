@@ -3,8 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.FragmentNotifications"
-    android:background="@color/purple_200">
+    android:background="@color/purple_200"
+    tools:context=".fragments.FragmentNotifications">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -17,75 +17,77 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:text="Create notifications"
             android:textColor="@color/white"
             android:textSize="40sp"
-            android:textStyle="bold"
-            android:layout_gravity="center"/>
+            android:textStyle="bold" />
 
     </LinearLayout>
 
-<RelativeLayout
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content">
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="70dp"
-        android:layout_centerHorizontal="true"
-        android:orientation="horizontal"
-        android:padding="16dp"
-        android:id="@+id/first"
-        android:gravity="center"
-        android:background="@drawable/shape" android:layout_marginBottom="10dp">
+        android:layout_height="wrap_content">
 
-        <EditText
-            android:id="@+id/editTitle"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:hint="Title" />
-
-        <EditText
-            android:id="@+id/editMessage"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:hint="Message" />
-    </LinearLayout>
-
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/first"
-        android:layout_centerHorizontal="true"
-        android:orientation="vertical"
-        >
-
-        <TimePicker
-            android:id="@+id/timePicker"
-            android:layout_width="269dp"
-            android:layout_height="340dp"
-            android:layout_gravity="center" />
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/first"
-        android:layout_gravity="center"
-        android:orientation="horizontal">
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/channel1Button"
+        <LinearLayout
+            android:id="@+id/first"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="High importance" />
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="70dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/shape"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="16dp">
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/channel2Button"
-            android:layout_width="wrap_content"
+            <EditText
+                android:id="@+id/editTitle"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:hint="Title" />
+
+            <EditText
+                android:id="@+id/editMessage"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:hint="Message" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Low importance" />
-    </LinearLayout>
-    </LinearLayout>
+            android:layout_below="@+id/first"
+            android:layout_centerHorizontal="true"
+            android:orientation="vertical">
 
-</RelativeLayout>
+            <TimePicker
+                android:id="@+id/timePicker"
+                android:layout_width="269dp"
+                android:layout_height="340dp"
+                android:layout_gravity="center" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/first"
+                android:layout_gravity="center"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/channel1Button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="High importance" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/channel2Button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Low importance" />
+            </LinearLayout>
+        </LinearLayout>
+
+    </RelativeLayout>
 </FrameLayout>

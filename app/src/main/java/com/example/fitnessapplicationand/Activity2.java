@@ -22,8 +22,6 @@ import androidx.appcompat.widget.AppCompatSeekBar;
 public class Activity2 extends AppCompatActivity {
 
 
-
-
     public static final String SHARED_PREFS = "sharedPrefs";
     public static final String TEXTage = "age";
     public static final String TEXTweight = "weight";
@@ -53,12 +51,12 @@ public class Activity2 extends AppCompatActivity {
         seekBar.setOnSeekBarChangeListener(listener);
         height_value = findViewById(R.id.height_value);
 
-        saveButton=findViewById(R.id.save_button);
+        saveButton = findViewById(R.id.save_button);
 
-
+        //allows for this activity to only open for the very first time when using the app
         if (AppConfig.activity == false) {
             Intent intent = new Intent();
-            intent.setClass(this,Activity3.class);
+            intent.setClass(this, Activity3.class);
             startActivity(intent);
             this.finish();
         }
@@ -69,8 +67,6 @@ public class Activity2 extends AppCompatActivity {
             startActivity(intent);
 
         }
-
-
 
 
         saveButton.setOnClickListener(new View.OnClickListener() {
@@ -84,8 +80,7 @@ public class Activity2 extends AppCompatActivity {
         updateViews();
     }
 
-    public void saveData()
-    {
+    public void saveData() {
         SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
 
@@ -99,27 +94,25 @@ public class Activity2 extends AppCompatActivity {
         openActivity3();
     }
 
-    public void openActivity3()
-    {
+    public void openActivity3() {
         Intent intent = new Intent(this, Activity3.class);
         startActivity(intent);
     }
 
-    public void loadData()
-    {
+    public void loadData() {
         SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
         savedAge = sharedPreferences.getString(TEXTage, "");
         savedHeight = sharedPreferences.getString(TEXTheight, "");
         savedWeight = sharedPreferences.getString(TEXTweight, "");
     }
 
-    public void updateViews()
-    {
+    public void updateViews() {
         age.setText(savedAge);
         height_value.setText(savedHeight);
         weight.setText(savedWeight);
     }
 
+    //taking out the value from the progress bar
     private SeekBar.OnSeekBarChangeListener listener = new SeekBar.OnSeekBarChangeListener() {
         @Override
         public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
@@ -137,36 +130,30 @@ public class Activity2 extends AppCompatActivity {
         }
     };
 
-    public void increaseAge(View view)
-    {
-        if(Integer.parseInt(age.getText().toString())>0)
-        {
-            int age_value = Integer.parseInt(age.getText().toString())+1;
+    public void increaseAge(View view) {
+        if (Integer.parseInt(age.getText().toString()) > 0) {
+            int age_value = Integer.parseInt(age.getText().toString()) + 1;
             age.setText(String.valueOf(age_value));
         }
     }
 
-    public void decreaseAge(View view)
-    {
-        if(Integer.parseInt(age.getText().toString())>0)
-        {
-            int age_value = Integer.parseInt(age.getText().toString())-1;
+    public void decreaseAge(View view) {
+        if (Integer.parseInt(age.getText().toString()) > 0) {
+            int age_value = Integer.parseInt(age.getText().toString()) - 1;
             age.setText(String.valueOf(age_value));
         }
     }
 
     public void increaseWeight(View view) {
-        if(Integer.parseInt(weight.getText().toString())>0)
-        {
-            int weight_value = Integer.parseInt(weight.getText().toString())+1;
+        if (Integer.parseInt(weight.getText().toString()) > 0) {
+            int weight_value = Integer.parseInt(weight.getText().toString()) + 1;
             weight.setText(String.valueOf(weight_value));
         }
     }
 
     public void decreaseWeight(View view) {
-        if(Integer.parseInt(weight.getText().toString())>0)
-        {
-            int weight_value = Integer.parseInt(weight.getText().toString())-1;
+        if (Integer.parseInt(weight.getText().toString()) > 0) {
+            int weight_value = Integer.parseInt(weight.getText().toString()) - 1;
             weight.setText(String.valueOf(weight_value));
         }
     }
@@ -175,33 +162,28 @@ public class Activity2 extends AppCompatActivity {
         int get_age = Integer.parseInt(age.getText().toString());
         int weight_value = Integer.parseInt(weight.getText().toString());
         double get_height = (double) seekBar.getProgress();
-        double heightm2 = get_height*get_height/10000;
+        double heightm2 = get_height * get_height / 10000;
         double bmi = weight_value / heightm2;
         showBMI(bmi);
 
 
     }
 
-    private void showBMI(double bmi)
-    {
+    private void showBMI(double bmi) {
 
-        if(bmi<18.5)
-        {
+        if (bmi < 18.5) {
             showCustomDialog("Underweight", "Eat foods that are high in carbohidrates and fats");
-        }
-        else if(bmi<25 && bmi>18.5)
-        {
+        } else if (bmi < 25 && bmi > 18.5) {
             showCustomDialog("Normal weight", "You are healthy");
-        }
-        else if(bmi>25){
+        } else if (bmi > 25) {
             showCustomDialog("Overweight", "Eat foods with less carbohidrates and more protein");
         }
 
 
     }
 
-    private void showCustomDialog(String title, String tip)
-    {
+    //showing a pop up with the bmi result and advice
+    private void showCustomDialog(String title, String tip) {
         ViewGroup viewgroup = findViewById(android.R.id.content);
         View view = LayoutInflater.from(this).inflate(R.layout.custome_dialog, viewgroup, false);
         AppCompatButton ok = view.findViewById(R.id.ok);

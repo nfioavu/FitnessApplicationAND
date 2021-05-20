@@ -17,30 +17,39 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 public class Activity3 extends AppCompatActivity {
 
 
-
-
-
     @RequiresApi(api = Build.VERSION_CODES.O)
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity3);
 
-        AppConfig.activity=true;
+        //allows for this activity to be the first to open after the first time using the app
+        AppConfig.activity = true;
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_nav);
 
+        //sets the main fragment to open
         openProfile();
+
+
         bottomNavigationView.setOnNavigationItemSelectedListener(
                 new BottomNavigationView.OnNavigationItemSelectedListener() {
                     @Override
                     public boolean onNavigationItemSelected(MenuItem item) {
                         switch (item.getItemId()) {
 
-                            case R.id.profile:openProfile(); break;
-                            case R.id.workouts: openWorkout(); break;
-                            case R.id.tips:openTips(); break;
-                            case R.id.notifications: opennNotifications();
-                            default:return true;
+                            case R.id.profile:
+                                openProfile();
+                                break;
+                            case R.id.workouts:
+                                openWorkout();
+                                break;
+                            case R.id.tips:
+                                openTips();
+                                break;
+                            case R.id.notifications:
+                                opennNotifications();
+                            default:
+                                return true;
                         }
                         return true;
                     }
@@ -50,38 +59,35 @@ public class Activity3 extends AppCompatActivity {
 
     }
 
-    private void openProfile()
-    {
+    //the following methods are responsible for starting each fragment
+
+    private void openProfile() {
         androidx.fragment.app.FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
         fragmentTransaction.replace(R.id.container, new FragmentProfile(), "profile");
         fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();
     }
 
-    private void openWorkout()
-    {
+    private void openWorkout() {
         androidx.fragment.app.FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
         fragmentTransaction.replace(R.id.container, new FragmentWorkouts(), "workouts");
         fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();
     }
 
-    private void openTips()
-    {
+    private void openTips() {
         androidx.fragment.app.FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
         fragmentTransaction.replace(R.id.container, new FragmentTips(), "tips");
         fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();
     }
 
-    private void opennNotifications()
-    {
+    private void opennNotifications() {
         androidx.fragment.app.FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
         fragmentTransaction.replace(R.id.container, new FragmentNotifications(), "notifications");
         fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();
     }
-
 
 
     @Override

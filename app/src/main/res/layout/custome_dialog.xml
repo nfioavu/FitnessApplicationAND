@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical">
 
@@ -8,38 +8,37 @@
         android:id="@+id/text"
         android:layout_width="match_parent"
         android:layout_height="100dp"
-        android:background="@color/purple_200"
-        />
+        android:background="@color/purple_200" />
 
     <TextView
         android:id="@+id/result_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
         android:text="Class"
         android:textColor="@color/black"
-        android:textSize="24sp"
-        android:gravity="center"
-        android:layout_marginTop="8dp"/>
+        android:textSize="24sp" />
+
     <TextView
         android:id="@+id/tips"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Class"
+        android:layout_marginTop="16dp"
         android:gravity="center"
-        android:textSize="16sp"
+        android:text="Class"
         android:textColor="@color/teal_200"
-        android:layout_marginTop="16dp"/>
+        android:textSize="16sp" />
+
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/ok"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:layout_marginTop="16dp"
-        android:text="OK"
         android:layout_marginBottom="16dp"
         android:background="@color/teal_200"
-        android:layout_gravity="center"/>
-
-
+        android:text="OK" />
 
 
 </LinearLayout>

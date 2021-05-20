@@ -7,8 +7,8 @@ import android.os.Build;
 
 public class Notif extends Application {
 
-    public static final String CHANNEL_1_ID="channel1";
-    public static final String CHANNEL_2_ID="channel2";
+    public static final String CHANNEL_1_ID = "channel1";
+    public static final String CHANNEL_2_ID = "channel2";
 
     @Override
     public void onCreate() {
@@ -18,9 +18,9 @@ public class Notif extends Application {
     }
 
 
-    private void createNotificationChannels()
-    {
-        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
+    //create the channels for future notifications
+    private void createNotificationChannels() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             NotificationChannel channel1 = new NotificationChannel(
                     CHANNEL_1_ID, "Channel 1", NotificationManager.IMPORTANCE_HIGH
             );

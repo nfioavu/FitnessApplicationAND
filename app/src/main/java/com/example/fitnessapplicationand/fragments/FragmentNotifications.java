@@ -20,13 +20,13 @@ import com.example.fitnessapplicationand.R;
 
 public class FragmentNotifications extends Fragment {
 
-private NotificationManagerCompat notificationManager;
-private EditText editTitle;
-private EditText editMessage;
-private TimePicker timePicker;
+    private NotificationManagerCompat notificationManager;
+    private EditText editTitle;
+    private EditText editMessage;
+    private TimePicker timePicker;
 
-private AppCompatButton channel1btn;
-private AppCompatButton channel2btn;
+    private AppCompatButton channel1btn;
+    private AppCompatButton channel2btn;
 
     public FragmentNotifications() {
         // Required empty public constructor
@@ -57,7 +57,7 @@ private AppCompatButton channel2btn;
                 int minute = timePicker.getMinute();
 
                 Notification notification = new NotificationCompat.Builder(view.getContext(), Notif.CHANNEL_1_ID).setSmallIcon(R.drawable.ic_baseline_looks_one_24)
-                        .setContentTitle(title).setContentText(message + "\n"+ "to do at: " + hour + ":" + minute).setPriority(NotificationCompat.PRIORITY_HIGH).setCategory(NotificationCompat.CATEGORY_MESSAGE).build();
+                        .setContentTitle(title).setContentText(message + "\n" + "to do at: " + hour + ":" + minute).setPriority(NotificationCompat.PRIORITY_HIGH).setCategory(NotificationCompat.CATEGORY_MESSAGE).build();
                 notificationManager.notify(1, notification);
             }
         });
@@ -70,7 +70,7 @@ private AppCompatButton channel2btn;
                 int hour = timePicker.getHour();
                 int minute = timePicker.getMinute();
                 Notification notification = new NotificationCompat.Builder(view.getContext(), Notif.CHANNEL_2_ID).setSmallIcon(R.drawable.ic_baseline_looks_two_24)
-                        .setContentTitle(title).setContentText(message+ "\n" + "to do at: " + hour + ":" + minute).setPriority(NotificationCompat.PRIORITY_LOW).build();
+                        .setContentTitle(title).setContentText(message + "\n" + "to do at: " + hour + ":" + minute).setPriority(NotificationCompat.PRIORITY_LOW).build();
                 notificationManager.notify(2, notification);
             }
         });

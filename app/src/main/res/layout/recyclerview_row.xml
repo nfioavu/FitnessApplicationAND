@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/purple_200"
     android:orientation="horizontal"
-    android:padding="10dp"
-    android:background="@color/purple_200">
+    android:padding="10dp">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -19,28 +19,28 @@
         app:cardCornerRadius="8dp"
         app:cardElevation="8dp"
         tools:ignore="MissingConstraints">
-    <RelativeLayout
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content">
-    <TextView
-        android:id="@+id/random"
-        android:text="random"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="40sp"
-        android:textStyle="bold"/>
 
-        <TextView
-            android:id="@+id/info"
+        <RelativeLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="haha"
-            android:layout_below="@+id/random"
-            android:textSize="20sp"/>
-    </RelativeLayout>
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/random"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="random"
+                android:textSize="40sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/random"
+                android:text=""
+                android:textSize="20sp" />
+        </RelativeLayout>
     </androidx.cardview.widget.CardView>
-
-
 
 
 </FrameLayout>

@@ -32,8 +32,9 @@ public class FragmentWorkouts extends Fragment implements MyRecyclerViewAdapter.
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
 
-        View view= inflater.inflate(R.layout.fragment_fragment_workouts, container, false);
+        View view = inflater.inflate(R.layout.fragment_fragment_workouts, container, false);
 
+        //creating and populating views in the recycler view
         Workout workout1 = new Workout();
         workout1.setDay("DAY 1 - Total body");
         workout1.setEx("ROUND 1 \n 15 Jump squats \n 15 Bench hops \n 15 Jumps toe taps \n 10 Weighed lunges \n 10 Box/bench jumps \n \n ROUND 2 \n 10 Burpees \n 15 Jackknives \n 10 Push ups \n 20sec Rope skipping \n 15 Squat & press");
@@ -60,8 +61,6 @@ public class FragmentWorkouts extends Fragment implements MyRecyclerViewAdapter.
         workouts.add(workout4);
 
 
-
-
         recyclerView = view.findViewById(R.id.recyclerview);
         recyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
         adapter = new MyRecyclerViewAdapter(view.getContext(), workouts);
@@ -70,7 +69,7 @@ public class FragmentWorkouts extends Fragment implements MyRecyclerViewAdapter.
         return view;
     }
 
-   @Override
+    @Override
     public void onItemClick(View view, int position) {
         Toast.makeText(getContext(), "You clicked " + adapter.getItem(position) + " on row number " + position, Toast.LENGTH_SHORT).show();
     }

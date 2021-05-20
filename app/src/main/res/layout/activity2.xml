@@ -3,20 +3,20 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:background="@color/purple_200"
     android:padding="8dp"
-    android:layout_height="match_parent"
     tools:context=".Activity2">
 
     <LinearLayout
         android:id="@+id/linear_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintHeight_percent="0.36"
-        app:layout_constraintTop_toTopOf="parent"
+        android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.36"
         app:layout_constraintStart_toStartOf="parent"
-        android:orientation="horizontal" >
+        app:layout_constraintTop_toTopOf="parent">
 
         <androidx.cardview.widget.CardView
             android:layout_width="0dp"
@@ -24,10 +24,10 @@
             android:layout_marginStart="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="16dp"
-            app:cardCornerRadius="8dp"
             android:layout_weight="1"
-            app:cardElevation="8dp"
-            android:background="@color/white">
+            android:background="@color/white"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="8dp">
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -37,42 +37,42 @@
                     android:id="@+id/age_title"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Age"
                     android:gravity="center"
+                    android:text="Age"
                     android:textColor="@color/black"
-                    android:textSize="20sp"/>
+                    android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/age"
-                    android:padding="8dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/age_title"
-                    android:text="30"
                     android:gravity="center"
+                    android:padding="8dp"
+                    android:text="30"
                     android:textColor="@color/black"
                     android:textSize="40sp"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold" />
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:layout_width="60dp"
                     android:layout_height="60dp"
                     android:layout_below="@+id/age"
-                    android:background="@drawable/ic_round_remove_circle_outline_24"
-                    android:onClick="decreaseAge"
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="16dp"
+                    android:background="@drawable/ic_round_remove_circle_outline_24"
+                    android:onClick="decreaseAge"
                     tools:ignore="OnClick" />
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:layout_width="60dp"
                     android:layout_height="60dp"
                     android:layout_below="@+id/age"
-                    android:background="@drawable/ic_baseline_add_circle_outline_24"
-                    android:onClick="increaseAge"
                     android:layout_alignParentEnd="true"
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="16dp"
+                    android:background="@drawable/ic_baseline_add_circle_outline_24"
+                    android:onClick="increaseAge"
                     tools:ignore="OnClick" />
 
 
@@ -81,18 +81,18 @@
         </androidx.cardview.widget.CardView>
 
 
-
         <androidx.cardview.widget.CardView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginEnd="8dp"
-            app:cardCornerRadius="8dp"
-
             android:layout_marginBottom="16dp"
+
             android:layout_weight="1"
-            app:cardElevation="8dp"
-            android:background="@color/white">
+            android:background="@color/white"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="8dp">
+
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
@@ -101,41 +101,41 @@
                     android:id="@+id/weight_title"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Weight"
                     android:gravity="center"
+                    android:text="Weight"
                     android:textColor="@color/black"
-                    android:textSize="20sp"/>
+                    android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/weight"
-                    android:padding="8dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/weight_title"
-                    android:text="70"
                     android:gravity="center"
+                    android:padding="8dp"
+                    android:text="70"
                     android:textColor="@color/black"
                     android:textSize="40sp"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold" />
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:layout_width="60dp"
                     android:layout_height="60dp"
                     android:layout_below="@+id/weight"
-                    android:background="@drawable/ic_round_remove_circle_outline_24"
-                    android:onClick="decreaseWeight"
                     android:layout_marginStart="8dp"
-                    android:layout_marginTop="16dp"/>
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/ic_round_remove_circle_outline_24"
+                    android:onClick="decreaseWeight" />
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:layout_width="60dp"
                     android:layout_height="60dp"
                     android:layout_below="@+id/weight"
-                    android:background="@drawable/ic_baseline_add_circle_outline_24"
-                    android:onClick="increaseWeight"
                     android:layout_alignParentEnd="true"
                     android:layout_marginStart="8dp"
-                    android:layout_marginTop="16dp"/>
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/ic_baseline_add_circle_outline_24"
+                    android:onClick="increaseWeight" />
 
 
             </RelativeLayout>
@@ -262,26 +262,6 @@
                 android:layout_toEndOf="@id/female" />
 
 
-            <!--            <TextView-->
-            <!--                android:id="@+id/height_value"-->
-            <!--                android:layout_width="wrap_content"-->
-            <!--                android:layout_height="wrap_content"-->
-            <!--                android:layout_below="@+id/height"-->
-            <!--                android:textColor="@color/black"-->
-            <!--                android:layout_marginTop="20dp"-->
-            <!--                android:textSize="35sp"-->
-            <!--                android:layout_centerHorizontal="true"-->
-            <!--                android:text="0 cm"-->
-            <!--                android:textStyle="bold"/>-->
-
-            <!--            <androidx.appcompat.widget.AppCompatSeekBar-->
-            <!--                android:id="@+id/seek_bar"-->
-            <!--                android:layout_width="match_parent"-->
-            <!--                android:layout_height="wrap_content"-->
-            <!--                android:layout_marginTop="20dp"-->
-            <!--                android:layout_margin="8dp"-->
-            <!--                android:layout_below="@id/height_value"/>-->
-
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
 
@@ -289,24 +269,23 @@
         android:id="@+id/calculate_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:gravity="left"
         android:onClick="showResult"
         android:text="Calculate BMI"
-        android:gravity="left"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/bottom_card"/>
+        app:layout_constraintTop_toBottomOf="@id/bottom_card" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/save_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:gravity="left"
         android:onClick="showResult"
         android:text="Save data"
-        android:gravity="left"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/calculate_button"/>
-
+        app:layout_constraintTop_toBottomOf="@id/calculate_button" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
