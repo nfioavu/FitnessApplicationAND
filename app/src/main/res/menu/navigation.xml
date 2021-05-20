@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/profile"
+        android:icon="@drawable/ic_baseline_person_24"
+        android:title="Profile"/>
+
+    <item
+        android:id="@+id/workouts"
+        android:icon="@drawable/ic_baseline_directions_bike_24"
+        android:title="Workouts"/>
+
+    <item
+        android:id="@+id/tips"
+        android:icon="@drawable/ic_baseline_star_24"
+        android:title="Tips"/>
+
+    <item
+        android:id="@+id/notifications"
+        android:icon="@drawable/ic_baseline_star_24"
+        android:title="Notifications"/>
+
+</menu>
