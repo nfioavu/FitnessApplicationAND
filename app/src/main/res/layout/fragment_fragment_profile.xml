@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".fragments.Fragment1LW">
+    tools:context=".fragments.FragmentProfile">
 
 <androidx.constraintlayout.widget.ConstraintLayout android:layout_height="match_parent"
     android:layout_width="match_parent"
@@ -40,7 +40,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <androidx.cardview.widget.CardView
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginEnd="8dp"
@@ -103,46 +103,46 @@
         </androidx.cardview.widget.CardView>
 
 
-                <androidx.cardview.widget.CardView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginEnd="8dp"
-                    app:cardCornerRadius="8dp"
+<!--                <androidx.cardview.widget.CardView-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginStart="8dp"-->
+<!--                    android:layout_marginEnd="8dp"-->
+<!--                    app:cardCornerRadius="8dp"-->
 
-                    android:layout_marginBottom="16dp"
-                    android:layout_weight="1"
-                    app:cardElevation="8dp"
-                    android:background="@color/white">
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+<!--                    android:layout_marginBottom="16dp"-->
+<!--                    android:layout_weight="1"-->
+<!--                    app:cardElevation="8dp"-->
+<!--                    android:background="@color/white">-->
+<!--                    <RelativeLayout-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="match_parent">-->
 
-                        <TextView
-                            android:id="@+id/bmi_title"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="BMI"
-                            android:gravity="center"
-                            android:textColor="@color/black"
-                            android:textSize="20sp"/>
+<!--                        <TextView-->
+<!--                            android:id="@+id/bmi_title"-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:text="BMI"-->
+<!--                            android:gravity="center"-->
+<!--                            android:textColor="@color/black"-->
+<!--                            android:textSize="20sp"/>-->
 
-                        <TextView
-                            android:id="@+id/bmi"
-                            android:padding="8dp"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@id/bmi_title"
-                            android:text=""
-                            android:gravity="center"
-                            android:textColor="@color/black"
-                            android:textSize="40sp"
-                            android:textStyle="bold"/>
+<!--                        <TextView-->
+<!--                            android:id="@+id/bmi"-->
+<!--                            android:padding="8dp"-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_below="@id/bmi_title"-->
+<!--                            android:text=""-->
+<!--                            android:gravity="center"-->
+<!--                            android:textColor="@color/black"-->
+<!--                            android:textSize="40sp"-->
+<!--                            android:textStyle="bold"/>-->
 
 
-                    </RelativeLayout>
+<!--                    </RelativeLayout>-->
 
-                </androidx.cardview.widget.CardView>
+<!--                </androidx.cardview.widget.CardView>-->
 
 
     </LinearLayout>
@@ -347,7 +347,11 @@
 
         </RelativeLayout>
 
+
+
     </androidx.cardview.widget.CardView>
+
+
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/save_button"
         android:layout_width="wrap_content"
@@ -359,15 +363,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/bottom_cardd"/>
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/calculate_button"
+
+    <com.google.android.material.progressindicator.LinearProgressIndicator
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Calculate BMI"
-        android:gravity="left"
+        app:layout_constraintTop_toBottomOf="@id/save_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/save_button"/>
+        android:layout_marginTop="50dp"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
 
 

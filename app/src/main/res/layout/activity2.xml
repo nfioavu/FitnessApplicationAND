@@ -244,6 +244,8 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/gender"
                 android:layout_alignParentEnd="true"
+                android:layout_marginTop="-21dp"
+                android:layout_marginEnd="9dp"
                 android:padding="16dp"
                 android:text="Male"
                 android:textSize="40sp" />

@@ -22,7 +22,7 @@ import static com.example.fitnessapplicationand.Activity2.TEXTheight;
 import static com.example.fitnessapplicationand.Activity2.TEXTweight;
 
 
-public class Fragment1LW extends Fragment {
+public class FragmentProfile extends Fragment {
 
 //    private TextView weightEdit;
 
@@ -33,7 +33,7 @@ public class Fragment1LW extends Fragment {
 //    private Button saveButton = getView().findViewById(R.id.save_button);
 
 
-    public Fragment1LW() {
+    public FragmentProfile() {
         // Required empty public constructor
     }
 
@@ -51,17 +51,15 @@ public class Fragment1LW extends Fragment {
         String height = sharedPreferences.getString(TEXTheight, null);
         String age = sharedPreferences.getString(TEXTage, null);
 
-        View view = inflater.inflate(R.layout.fragment_fragment1_l_w, container, false);
+        View view = inflater.inflate(R.layout.fragment_fragment_profile, container, false);
 
         TextView weightEdit = (TextView) view.findViewById(R.id.weightEdit);
         TextView heightEdit = (TextView) view.findViewById(R.id.heightEdit);
         TextView ageEdit = (TextView) view.findViewById(R.id.ageEdit);
-//        TextView bmiEdit = (TextView) view.findViewById(R.id.bmi);
 
         AppCompatButton plus =(AppCompatButton) view.findViewById(R.id.plus);
         AppCompatButton minus = (AppCompatButton) view.findViewById(R.id.minus);
         AppCompatButton save = (AppCompatButton) view.findViewById(R.id.save_button);
-//        AppCompatButton calculate = (AppCompatButton) view.findViewById(R.id.calculate_button);
 
         weightEdit.setText(weight);
         heightEdit.setText(height);
@@ -96,9 +94,12 @@ public class Fragment1LW extends Fragment {
             public void onClick(View v) {
                 editor.putString(TEXTweight, weightEdit.getText().toString());
                 editor.apply();
+
                 Toast.makeText(getContext(), "Data updated", Toast.LENGTH_SHORT).show();
             }
         });
+
+
 
 //        calculate.setOnClickListener(new View.OnClickListener() {
 //            @Override

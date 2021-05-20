@@ -56,20 +56,19 @@ public class Activity2 extends AppCompatActivity {
         saveButton=findViewById(R.id.save_button);
 
 
-        //makes this activity run only for the first time when opening the app
-        Boolean isFirstRun = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE)
-                .getBoolean("isFirstRun", true);
-
-        if (isFirstRun) {
-            //show start activity
-
-            startActivity(new Intent(this, Activity3.class));
-            Toast.makeText(this, "First Run", Toast.LENGTH_LONG)
-                    .show();
+        if (AppConfig.activity == false) {
+            Intent intent = new Intent();
+            intent.setClass(this,Activity3.class);
+            startActivity(intent);
+            this.finish();
         }
-        getSharedPreferences(SHARED_PREFS, MODE_PRIVATE).edit()
-                .putBoolean("isFirstRun", false).commit();
+        if (AppConfig.activity == true) {
 
+            Intent intent = new Intent();
+            intent.setClass(this, MainActivity.class);
+            startActivity(intent);
+
+        }
 
 
 

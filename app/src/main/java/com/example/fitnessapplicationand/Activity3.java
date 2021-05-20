@@ -1,7 +1,5 @@
 package com.example.fitnessapplicationand;
 
-import android.app.FragmentManager;
-import android.app.FragmentTransaction;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.Menu;
@@ -9,12 +7,11 @@ import android.view.MenuItem;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
 
-import com.example.fitnessapplicationand.fragments.Fragment1LW;
-import com.example.fitnessapplicationand.fragments.Fragment2LW;
-import com.example.fitnessapplicationand.fragments.Fragment3LW;
-import com.example.fitnessapplicationand.fragments.Fragment4LW;
+import com.example.fitnessapplicationand.fragments.FragmentProfile;
+import com.example.fitnessapplicationand.fragments.FragmentWorkouts;
+import com.example.fitnessapplicationand.fragments.FragmentTips;
+import com.example.fitnessapplicationand.fragments.FragmentNotifications;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class Activity3 extends AppCompatActivity {
@@ -28,7 +25,7 @@ public class Activity3 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity3);
 
-
+        AppConfig.activity=true;
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_nav);
 
@@ -56,7 +53,7 @@ public class Activity3 extends AppCompatActivity {
     private void openProfile()
     {
         androidx.fragment.app.FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-        fragmentTransaction.replace(R.id.container, new Fragment1LW(), "profile");
+        fragmentTransaction.replace(R.id.container, new FragmentProfile(), "profile");
         fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();
     }
@@ -64,7 +61,7 @@ public class Activity3 extends AppCompatActivity {
     private void openWorkout()
     {
         androidx.fragment.app.FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-        fragmentTransaction.replace(R.id.container, new Fragment2LW(), "workouts");
+        fragmentTransaction.replace(R.id.container, new FragmentWorkouts(), "workouts");
         fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();
     }
@@ -72,7 +69,7 @@ public class Activity3 extends AppCompatActivity {
     private void openTips()
     {
         androidx.fragment.app.FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-        fragmentTransaction.replace(R.id.container, new Fragment3LW(), "tips");
+        fragmentTransaction.replace(R.id.container, new FragmentTips(), "tips");
         fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();
     }
@@ -80,7 +77,7 @@ public class Activity3 extends AppCompatActivity {
     private void opennNotifications()
     {
         androidx.fragment.app.FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-        fragmentTransaction.replace(R.id.container, new Fragment4LW(), "notifications");
+        fragmentTransaction.replace(R.id.container, new FragmentNotifications(), "notifications");
         fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();
     }

@@ -18,9 +18,9 @@ import com.example.fitnessapplicationand.recyclerView.Workout;
 import java.util.ArrayList;
 
 
-public class Fragment2LW extends Fragment implements MyRecyclerViewAdapter.ItemClickListener {
+public class FragmentWorkouts extends Fragment implements MyRecyclerViewAdapter.ItemClickListener {
 
-    public Fragment2LW() {
+    public FragmentWorkouts() {
         // Required empty public constructor
     }
 
@@ -32,7 +32,7 @@ public class Fragment2LW extends Fragment implements MyRecyclerViewAdapter.ItemC
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
 
-        View view= inflater.inflate(R.layout.fragment_fragment2_l_w, container, false);
+        View view= inflater.inflate(R.layout.fragment_fragment_workouts, container, false);
 
         Workout workout1 = new Workout();
         workout1.setDay("DAY 1 - Total body");

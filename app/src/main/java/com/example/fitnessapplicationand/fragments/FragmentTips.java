@@ -22,9 +22,9 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 
-public class Fragment3LW extends Fragment {
+public class FragmentTips extends Fragment {
 
-    public Fragment3LW() {
+    public FragmentTips() {
         // Required empty public constructor
     }
 
@@ -34,7 +34,7 @@ public class Fragment3LW extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view =  inflater.inflate(R.layout.fragment_fragment3_l_w, container, false);
+        View view =  inflater.inflate(R.layout.fragment_fragment_tips, container, false);
         TextView text = view.findViewById(R.id.quoteText);
         TextView author = view.findViewById(R.id.quoteAuthor);
 //        TextView senderName = view.findViewById(R.id.senderName);

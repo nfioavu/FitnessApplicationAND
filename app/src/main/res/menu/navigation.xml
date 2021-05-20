@@ -3,21 +3,21 @@
     <item
         android:id="@+id/profile"
         android:icon="@drawable/ic_baseline_person_24"
-        android:title="Profile"/>
+        android:title="@string/Profile"/>
 
     <item
         android:id="@+id/workouts"
         android:icon="@drawable/ic_baseline_directions_bike_24"
-        android:title="Workouts"/>
+        android:title="@string/Workouts"/>
 
     <item
         android:id="@+id/tips"
         android:icon="@drawable/ic_baseline_star_24"
-        android:title="Tips"/>
+        android:title="@string/Tips"/>
 
     <item
         android:id="@+id/notifications"
-        android:icon="@drawable/ic_baseline_star_24"
-        android:title="Notifications"/>
+        android:icon="@drawable/ic_baseline_notifications_24"
+        android:title="@string/Notif"/>
 
 </menu>

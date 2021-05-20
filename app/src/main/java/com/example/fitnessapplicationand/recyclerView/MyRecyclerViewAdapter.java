@@ -9,7 +9,7 @@ import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.fitnessapplicationand.R;
-import com.example.fitnessapplicationand.fragments.Fragment2LW;
+import com.example.fitnessapplicationand.fragments.FragmentWorkouts;
 
 import java.util.List;
 
@@ -72,7 +72,7 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
     }
 
     // allows clicks events to be caught
-    public void setClickListener(Fragment2LW itemClickListener) {
+    public void setClickListener(FragmentWorkouts itemClickListener) {
         this.mClickListener = (ItemClickListener) itemClickListener;
     }
 

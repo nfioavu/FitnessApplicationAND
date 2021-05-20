@@ -18,7 +18,7 @@ import com.example.fitnessapplicationand.Notif;
 import com.example.fitnessapplicationand.R;
 
 
-public class Fragment4LW extends Fragment {
+public class FragmentNotifications extends Fragment {
 
 private NotificationManagerCompat notificationManager;
 private EditText editTitle;
@@ -28,7 +28,7 @@ private TimePicker timePicker;
 private AppCompatButton channel1btn;
 private AppCompatButton channel2btn;
 
-    public Fragment4LW() {
+    public FragmentNotifications() {
         // Required empty public constructor
     }
 
@@ -37,7 +37,7 @@ private AppCompatButton channel2btn;
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_fragment4_l_w, container, false);
+        View view = inflater.inflate(R.layout.fragment_fragment_notifications, container, false);
 
         notificationManager = NotificationManagerCompat.from(view.getContext());
 
